@@ -1,38 +1,87 @@
 // Calculator Javascript Code//
 
-//add function//
-function add(a, b) {
-  return a + b;
-};
+let displayNumber = '';
+let storedNumber = '';
+let operator = '';
 
-//subtract function//
-function subtract(a, b) {
-    return a - b;
-};
+const numberButtons = document.querySelectorAll('.numberButton');
+const operatorButtons = document.querySelectorAll('.operatorButton');
+const clearButtons = document.querySelectorAll('.clearButton');
+const numberScreen = document.querySelector('.displayNumber');
+const storedScreen = document.querySelector('.storedNumber');
 
-//multiply function//
-function multiply(a, b) {
-    return a * b;
-};
+numberButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        displayNumber += button.textContent;
+        numberScreen.textContent = displayNumber;
+    })
+})
 
-//divide function//
-function divide(a, b) {
-    return a / b;
-};
+operatorButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (button.textContent == '=') {
+            displayNumber = operate(Number(storedNumber), Number(displayNumber), operator);
+            storedNumber = '';
+            operator = '';
+            storedScreen.textContent = storedNumber;
+            numberScreen.textContent = displayNumber;
+        } else if (storedNumber == '') {
+            storedNumber = displayNumber;
+            displayNumber = '';
+            operator = button.textContent;
+            storedScreen.textContent = storedNumber + operator;
+            numberScreen.textContent = displayNumber;
+        } else {
+            storedNumber = operate(Number(storedNumber), Number(displayNumber), operator);
+            displayNumber = '';
+            operator = button.textContent;
+            storedScreen.textContent = storedNumber + operator;
+            numberScreen.textContent = displayNumber;
+        }
+    })
+})
 
-//operate function - takes two values and chooses which function to perform//
-function operate(a, b) {
-    if (plus === true) {
-        c = add(a, b);
-    } else if (minus === true) {
-        c = subtract(a, b);
-    } else if (times === true) {
-       c = multiply(a, b);
-    } else if (over === true) {
-       c = divide(a, b);
-    } else {
-        c = c;
-    };
-    return c;
-};
+clearButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        switch (button.textContent) {
+            case 'C':
+                displayNumber = '';
+                storedNumber = '';
+                operator = '';
+                storedScreen.textContent = storedNumber;
+                numberScreen.textContent = displayNumber;
+            case 'C':
+                displayNumber = displayNumber.slice(0, displayNumber.length - 1);
+                numberScreen.textContent = displayNumber;
+        }
+    })
+})
 
+function add(num1, num2) {
+    return num1 + num2;
+}
+
+function substract(num1, num2) {
+    return num1 - num2;
+}
+
+function multiply(num1, num2) {
+    return num1 * num2;
+}
+
+function divide(num1, num2) {
+    return num1 / num2;
+}
+
+function operate(num1, num2, operator) {
+    switch (operator) {
+        case '+':
+            return add(num1, num2);
+        case '-':
+            return substract(num1, num2);
+        case "*":
+            return multiply(num1, num2);
+        case "/":
+            return divide(num1, num2);
+    }
+}
