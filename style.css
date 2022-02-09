@@ -1,0 +1,56 @@
+/* Calculator Project Styling */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    Color: white;
+    background-color: rgb(86, 143, 216);
+    height: 100px;
+    flex: 1;
+}
+
+.footer {
+    Color: white;
+    background-color: rgb(86, 143, 216);
+    height: 50px;
+    flex: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 600px;
+}
+
+.calcOutline {
+    background-color: grey;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    margin: 50px;
+    height: 500px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calcResult {
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: black;
+    height: 100px;
+    width: 350px;
+    margin: 10px;
+}
