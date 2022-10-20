@@ -1,6 +1,6 @@
 # Calculator
 
-The purpose of this project is to create a basic calculator to perform basic math equations.
+The purpose of this project is to create a calculator app to perform basic math equations.
 
 The program will need to be able to add, subtract, multiply, and divide two numbers together.
 
