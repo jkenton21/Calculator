@@ -3,8 +3,13 @@
 body {
     display: flex;
     flex-direction: column;
-    align-content: center;
     justify-content: center;
+    align-items: center;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 100vw;
+    font-family: "Fuzzy Bubbles", sarif;
 }
 
 .header {
@@ -15,6 +20,7 @@ body {
     display: flex;
     justify-content: center;
     flex: 1;
+    width: 100%;
 }
 
 .footer {
@@ -24,6 +30,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .container {
@@ -78,4 +85,10 @@ body {
 button {
     height: 60px;
     width: 60px;
+    align-content: center; 
+}
+
+button:hover {
+    border-style: solid;
+    border-color: black;
 }
