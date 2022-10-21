@@ -8,6 +8,7 @@ body {
     top: 0px;
     left: 0px;
     position: absolute;
+    margin: 0px;
     width: 100vw;
     font-family: "Fuzzy Bubbles", sarif;
 }
